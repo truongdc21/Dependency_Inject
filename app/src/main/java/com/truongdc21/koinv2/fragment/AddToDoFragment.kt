@@ -1,11 +1,8 @@
 package com.truongdc21.koinv2.fragment
 
-import android.view.Gravity
 import android.view.View
-import android.widget.Toast
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.snackbar.Snackbar
 import com.truongdc21.koinv2.R
 import com.truongdc21.koinv2.base.BaseFragment
 import com.truongdc21.koinv2.databinding.FragmentAddToDoBinding
@@ -48,7 +45,6 @@ class AddToDoFragment : BaseFragment<FragmentAddToDoBinding>(FragmentAddToDoBind
             view.findNavController().navigate(
                 R.id.action_addToDoFragment_to_toDoListFragment
             )
-
         } else {
             this@AddToDoFragment.context?.showToast("Todo title can not be empty")
         }

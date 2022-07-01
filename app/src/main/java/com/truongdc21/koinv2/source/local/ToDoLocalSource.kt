@@ -3,9 +3,9 @@ package com.truongdc21.koinv2.source.local
 import com.truongdc21.koinv2.db.ToDoDao
 import com.truongdc21.koinv2.model.ToDo
 import com.truongdc21.koinv2.source.ToDoDataSource
-import java.util.concurrent.Flow
+import org.koin.core.annotation.Single
 
-class ToDoLocalSource (
+class ToDoLocalSource(
     private val toDoDao: ToDoDao
 ): ToDoDataSource.Local {
 

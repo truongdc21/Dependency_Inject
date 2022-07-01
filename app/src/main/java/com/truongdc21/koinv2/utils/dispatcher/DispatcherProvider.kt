@@ -3,7 +3,9 @@ package com.truongdc21.koinv2.utils.dispatcher
 import androidx.annotation.NonNull
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
+import org.koin.core.annotation.Single
 
+@Single
 class DispatcherProvider : BaseDispatcherProvider {
 
     @NonNull

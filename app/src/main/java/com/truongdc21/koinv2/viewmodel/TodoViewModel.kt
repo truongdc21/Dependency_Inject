@@ -5,10 +5,12 @@ import androidx.lifecycle.asLiveData
 import com.truongdc21.koinv2.base.BaseViewModel
 import com.truongdc21.koinv2.model.ToDo
 import com.truongdc21.koinv2.repository.ToDoRepositoryIplm
+import org.koin.android.annotation.KoinViewModel
 
+@KoinViewModel
 class TodoViewModel(
- private val toDoRepositoryIplm: ToDoRepositoryIplm,
-): BaseViewModel() {
+   private val toDoRepositoryIplm: ToDoRepositoryIplm
+) : BaseViewModel() {
 
     fun insertTodo(toDo: ToDo) {
         launchTaskSync(
@@ -18,9 +20,10 @@ class TodoViewModel(
                 Log.d("x2" , "Insert Success")
             }
         )
+        Log.d("x2", "Insert Success")
     }
 
-    fun deleteToDo(toDo: ToDo){
+    fun deleteToDo(toDo: ToDo) {
         launchTaskSync(
             onRequest = {
                 toDoRepositoryIplm.deleteToDo(toDo)
@@ -29,5 +32,5 @@ class TodoViewModel(
             }
         )
     }
-    val allToDos = toDoRepositoryIplm.getAllToDo().asLiveData()
+     val allToDos = toDoRepositoryIplm.getAllToDo().asLiveData()
 }
