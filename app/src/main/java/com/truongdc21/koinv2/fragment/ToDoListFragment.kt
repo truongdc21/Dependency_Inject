@@ -1,7 +1,7 @@
 package com.truongdc21.koinv2.fragment
 
 import android.view.View
-import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,14 +12,15 @@ import com.truongdc21.koinv2.databinding.FragmentToDoListBinding
 import com.truongdc21.koinv2.model.ToDo
 import com.truongdc21.koinv2.utils.showToast
 import com.truongdc21.koinv2.viewmodel.TodoViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ToDoListFragment:
     BaseFragment<FragmentToDoListBinding> (FragmentToDoListBinding::inflate){
 
     private lateinit var todoAdapter  : TodoAdapter
 
-    private val mViewModel : TodoViewModel by viewModel()
+    private val mViewModel : TodoViewModel by viewModels()
 
     override fun initView() {
         setUpRecyclerview()

@@ -1,19 +1,20 @@
 package com.truongdc21.koinv2.base
 
 import com.truongdc21.koinv2.utils.DataResult
-import com.truongdc21.koinv2.utils.dispatcher.BaseDispatcherProvider
+import com.truongdc21.koinv2.utils.dispatcher.IoDispatcher
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import org.koin.core.component.KoinComponent
-import org.koin.core.component.get
 import java.io.IOException
 import kotlin.coroutines.CoroutineContext
 
-abstract class BaseRepository : KoinComponent {
-    private val dispatcherProvider = get<BaseDispatcherProvider>()
+abstract class BaseRepository  {
+
+    @IoDispatcher private val dispatcherIo : CoroutineDispatcher = Dispatchers.IO
 
     protected suspend fun <R> withContextResult(
-        dispatcherContextIO: CoroutineContext = dispatcherProvider.io(),
+        dispatcherContextIO: CoroutineContext = dispatcherIo,
         requestBlock: suspend CoroutineScope.() -> R
     ): DataResult<R> = withContext(dispatcherContextIO) {
         return@withContext try {
@@ -28,4 +29,3 @@ abstract class BaseRepository : KoinComponent {
         }
     }
 }
-
