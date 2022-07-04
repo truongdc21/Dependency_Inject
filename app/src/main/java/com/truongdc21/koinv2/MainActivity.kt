@@ -7,12 +7,10 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.truongdc21.koinv2.base.BaseActivity
 import com.truongdc21.koinv2.databinding.ActivityMainBinding
-import com.truongdc21.koinv2.model.ToDo
-import com.truongdc21.koinv2.test.Student
-import com.truongdc21.koinv2.viewmodel.TodoViewModel
-import org.koin.android.ext.android.get
-import org.koin.android.ext.android.inject
+import dagger.hilt.android.AndroidEntryPoint
 
+
+@AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
 
     private lateinit var mNavController: NavController
@@ -44,9 +42,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
     }
 
     private fun testKoin() {
-        val studen = get<Student>()
-        studen.beSmart()
-        val vmd by inject<TodoViewModel>()
-        vmd.insertTodo(ToDo(0,"2"))
+//        val studen = get<Student>()
+//        studen.beSmart()
+//        val vmd by inject<TodoViewModel>()
+//        vmd.insertTodo(ToDo(0,"2"))
     }
 }

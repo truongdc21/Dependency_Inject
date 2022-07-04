@@ -1,6 +1,7 @@
 package com.truongdc21.koinv2.fragment
 
 import android.view.View
+import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.truongdc21.koinv2.R
@@ -9,11 +10,12 @@ import com.truongdc21.koinv2.databinding.FragmentAddToDoBinding
 import com.truongdc21.koinv2.model.ToDo
 import com.truongdc21.koinv2.utils.showToast
 import com.truongdc21.koinv2.viewmodel.TodoViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AddToDoFragment : BaseFragment<FragmentAddToDoBinding>(FragmentAddToDoBinding::inflate) {
 
-    private val mViewModel : TodoViewModel by viewModel()
+    private val mViewModel : TodoViewModel by viewModels()
 
     override fun initView() {
         binding.btnAddTask.setOnClickListener { mView ->

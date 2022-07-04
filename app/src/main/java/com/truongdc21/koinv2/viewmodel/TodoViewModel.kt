@@ -5,10 +5,11 @@ import androidx.lifecycle.asLiveData
 import com.truongdc21.koinv2.base.BaseViewModel
 import com.truongdc21.koinv2.model.ToDo
 import com.truongdc21.koinv2.repository.ToDoRepositoryIplm
-import org.koin.android.annotation.KoinViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-@KoinViewModel
-class TodoViewModel(
+@HiltViewModel
+class TodoViewModel @Inject constructor(
    private val toDoRepositoryIplm: ToDoRepositoryIplm
 ) : BaseViewModel() {
 

@@ -3,7 +3,6 @@ package com.truongdc21.koinv2.source.local
 import com.truongdc21.koinv2.db.ToDoDao
 import com.truongdc21.koinv2.model.ToDo
 import com.truongdc21.koinv2.source.ToDoDataSource
-import org.koin.core.annotation.Single
 
 class ToDoLocalSource(
     private val toDoDao: ToDoDao
