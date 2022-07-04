@@ -5,10 +5,8 @@ import androidx.lifecycle.asLiveData
 import com.truongdc21.koinv2.base.BaseViewModel
 import com.truongdc21.koinv2.model.ToDo
 import com.truongdc21.koinv2.repository.ToDoRepositoryIplm
-import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
-@HiltViewModel
 class TodoViewModel @Inject constructor(
    private val toDoRepositoryIplm: ToDoRepositoryIplm
 ) : BaseViewModel() {

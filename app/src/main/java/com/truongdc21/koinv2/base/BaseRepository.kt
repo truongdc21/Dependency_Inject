@@ -7,11 +7,13 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.IOException
+import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 
 abstract class BaseRepository  {
 
-    @IoDispatcher private val dispatcherIo : CoroutineDispatcher = Dispatchers.IO
+    @Inject
+    @IoDispatcher lateinit var dispatcherIo : CoroutineDispatcher
 
     protected suspend fun <R> withContextResult(
         dispatcherContextIO: CoroutineContext = dispatcherIo,

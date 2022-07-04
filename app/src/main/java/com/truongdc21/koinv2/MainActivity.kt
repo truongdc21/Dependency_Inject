@@ -7,10 +7,8 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.truongdc21.koinv2.base.BaseActivity
 import com.truongdc21.koinv2.databinding.ActivityMainBinding
-import dagger.hilt.android.AndroidEntryPoint
+import dagger.Module
 
-
-@AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
 
     private lateinit var mNavController: NavController
@@ -18,11 +16,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 
     override fun initViews() {
        setupNavigationView()
-
     }
 
     override fun initData() {
-        testKoin()
     }
 
     private fun setupNavigationView() {
@@ -39,12 +35,5 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 
     override fun onSupportNavigateUp(): Boolean {
         return mNavController.navigateUp(mAppBarConfiguration) || super.onSupportNavigateUp()
-    }
-
-    private fun testKoin() {
-//        val studen = get<Student>()
-//        studen.beSmart()
-//        val vmd by inject<TodoViewModel>()
-//        vmd.insertTodo(ToDo(0,"2"))
     }
 }
