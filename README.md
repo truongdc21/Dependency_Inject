@@ -1,8 +1,5 @@
-# Koin - App note todo 
-# Base Project Koin - MVVM
-# Android Advance : 
-MVVM Architecture -
-Koin Dependence inject -
-Room database -
-View Binding -
-Coroutines
+# Denpendency-Inject - App Note Todo 
+# 1. [Koin]
+# 2. [Koin - Annotation]
+# 3. [Dagger-2]
+# 4. [Dagger - Hilt]
